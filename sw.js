@@ -51,7 +51,7 @@ self.addEventListener('sync', (event) => {
 
 const sendToServer = async () => {
   try {
-    const outbox = loadData('outbox');
+    const outbox = await loadData('outbox');
     console.log('outbox', outbox);
     outbox.map((message) => {
       saveGreeting(message);
